@@ -1,10 +1,20 @@
 const UserInput = (props) => {
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        props.setUserInput(true)
+    }
+
+
     return(
-        <form action="">
-            <label htmlFor="city">Name of City you could like weather for:</label>
-            <input type="text" />
-            <button type="submit"></button>
+        <form onSubmit={handleSubmit}>
+            <label htmlFor="city" name="city">What City would you like weather for?</label>
+            <div className="inputContainer">
+            <input type="text" name="city" onChange={(e) => props.setInput(e.target.value)}/>
+            <button type="submit" value="Submit">Submit</button>
+            </div>
         </form>
     )
 }
+
+export default UserInput

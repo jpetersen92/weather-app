@@ -23,20 +23,25 @@ h1, h2, h3, p {
   margin: 0;
 }
 
+h1 {
+  position: absolute;
+  top: 0;
+}
+
 .App {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   height: 100vh;
 }
 
 .weatherCard {
-  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(110, 110, 110, 0.8);
   width: 300px;
   height: 500px;
   border-radius: 50px;
@@ -45,7 +50,7 @@ h1, h2, h3, p {
 ul {
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: flex-end;
   padding: 0;
 }
 
@@ -60,6 +65,35 @@ li {
   align-items: center;
 }
 
+.temp p:last-of-type{
+  font-size: .7rem;
+}
+
 .current p:first-of-type{
   font-size: 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 300px;
+  background-color: rgba(110, 110, 110, 0.8);
+  text-align: center;
+  border-radius: 50px;
+}
+
+.inputContainer {
+  margin-top: 25px;
+  width: 95%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.inputContainer input {
+  width: 50%;
+  border-radius: 5px;
+  border: none;
 }
