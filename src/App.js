@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import WeatherCard from './components/WeatherCard';
 import UserInput from './components/UserInput'
+import Footer from './components/Footer';
 
 function App() {
 
@@ -35,7 +36,9 @@ function App() {
       setWeather(res.data.weather[0].description);
       setIcon(`http://openweathermap.org/img/wn/${res.data.weather[0].icon}@4x.png`)
     })
+  }, [input, userInput])
 
+  useEffect(() => {
     axios({
       url: 'https://api.unsplash.com/photos/random',
       method: 'GET',
@@ -46,7 +49,7 @@ function App() {
     }).then((res) => {
       setBackground(res.data.urls.full)
     })
-  }, [userInput])
+  })
 
   const handleClick = () => {
     setUserInput(false)
@@ -69,6 +72,8 @@ function App() {
         <UserInput setInput={setInput} setUserInput={setUserInput}/>
         </>
       }
+
+      <Footer />
     </div>
   );
 }
