@@ -54,10 +54,10 @@ const WeatherCard = (props) => {
                     </div>
                 </li>
             </ul>
-            <label class="rocker rocker-small">
+            <label className="rocker rocker-small">
                 <input type="checkbox" onChange={tempSwitch}/>
-                <span class="switch-left">C°</span>
-                <span class="switch-right">F°</span>
+                <span className="switch-left">C°</span>
+                <span className="switch-right">F°</span>
             </label>
         </div>
     )

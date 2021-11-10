@@ -1,6 +1,7 @@
 const Footer = () => {
     return(
         <footer>
+            <i className="fas fa-chevron-up"></i>
             <ul>
                 <li>Created with Open Weather and Unsplash API</li>
                 <li>Josh Petersen ©</li>

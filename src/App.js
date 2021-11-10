@@ -35,7 +35,7 @@ function App() {
       setMinTemp(Math.floor(res.data.main.temp_min));
       setWeather(res.data.weather[0].description);
       setIcon(`http://openweathermap.org/img/wn/${res.data.weather[0].icon}@4x.png`)
-    })
+    })    
   }, [input, userInput])
 
   useEffect(() => {
@@ -47,9 +47,12 @@ function App() {
         query: weather,
       },
     }).then((res) => {
+      if(!res.ok){
+        throw new Error('Network response was not OK')
+      }
       setBackground(res.data.urls.full)
-    })
-  })
+    }) .catch(error => {console.error('There has been a problem with your fetch operations:', error)})
+  }, [weather])
 
   const handleClick = () => {
     setUserInput(false)
