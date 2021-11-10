@@ -96,6 +96,7 @@ form {
   width: 95%;
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 .inputContainer input {
@@ -104,9 +105,30 @@ form {
   border: none;
 }
 
+button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
 .back {
   position: absolute;
   bottom: 20px;
+  padding: 5px 10px;
+  background-color: rgba(110, 110, 110, 0.8);
+  border: none;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.back:hover {
+  background-color:rgba(110, 110, 110, 1);
+  transform: scale(1.1);
 }
 
 .rocker {
@@ -223,3 +245,4 @@ input:checked + .switch-left + .switch-right {
 input:checked + .switch-left + .switch-right::before {
   background-color: #ccc;
 }
+

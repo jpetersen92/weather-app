@@ -56,8 +56,6 @@ function App() {
 
   return (
     <div className="App" style={{backgroundImage: `url(${background})`}}>
-      {/* <img className="background" src={background} alt="" /> */}
-      <h1>Whats The Weather</h1>
       {
         userInput === true
         ?
@@ -65,7 +63,11 @@ function App() {
         <WeatherCard city={city} icon={icon} weather={weather} minTemp={minTemp} temp={temp} maxTemp={maxTemp}/>
         <button className="back" onClick={() => handleClick()}>Back</button>
         </>
-        : <UserInput setInput={setInput} setUserInput={setUserInput}/>
+        : 
+        <>
+        <h1>Whats The Weather</h1>
+        <UserInput setInput={setInput} setUserInput={setUserInput}/>
+        </>
       }
     </div>
   );
